@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vibro Messenger</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- LOGIN / REGISTER -->
+<div id="login_register">
+<h2>Vibro Messenger</h2>
+<input id="login_input" placeholder="Username or Phone">
+<input id="username_input" placeholder="Username (for register)">
+<input id="phone_input" placeholder="Phone (for register)">
+<input id="password_input" type="password" placeholder="Password">
+<button onclick="register()">Register</button>
+<button onclick="login()">Login</button>
+<div id="login_error" style="color:red"></div>
+</div>
+
+<!-- MAIN CHAT -->
+<div id="chat" style="display:none;">
+<div id="sidebar">
+<h3>Profile</h3>
+<div id="profile_info"></div>
+<h3>Users</h3>
+<input id="search_user" placeholder="Search" oninput="searchUsers()">
+<div id="user_list"></div>
+
+<h3>Groups</h3>
+<div id="group_list"></div>
+<input id="new_group" placeholder="New group name">
+<button onclick="createGroup()">Create Group</button>
+</div>
+
+<div id="chat_window">
+<h2 id="chat_title">Vibro Messenger</h2>
+<div id="messages"></div>
+<input id="message_input" placeholder="Message">
+<button onclick="sendMessage()">Send</button>
+</div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
